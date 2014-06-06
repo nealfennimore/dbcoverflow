@@ -26,5 +26,11 @@ describe Question do
     end
   end
 
+  context "#associations" do
+    it {should have_many :votes}
+    it {should have_many :comments}
+    it {should have_many :answers}
+  end
+
 
 end
