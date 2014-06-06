@@ -1,22 +1,25 @@
 FactoryGirl.define do
 	factory :user do
-		name { Faker::Name.name }
+		username { Faker::Name.user_name }
+		email { Faker::Internet.email }
+		password { Faker::Internet.password }
 	end
 
 	factory :question do
-		text { Faker::Name.name }
+		body { Faker::Lorem.sentence }
 	end
 
 	factory :answer do
-		text { Faker::Name.name }
+		body { Faker::Name.name }
 	end
 
 	factory :comment do
-		text { Faker::Name.name }
+		body { Faker::Lorem.paragraph }
 	end
 
+
 	factory :vote do
-		name { Faker::Name.name }
+		score { [1,-1].sample }
 	end
 
 end
